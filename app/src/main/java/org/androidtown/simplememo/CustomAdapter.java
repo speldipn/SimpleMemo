@@ -106,17 +106,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.Holder> {
         }
       });
 
-//      btnModify = itemView.findViewById(R.id.btnModify);
-//      btnModify.setOnClickListener(new View.OnClickListener() {
-//        @Override
-//        public void onClick(View v) {
-//          int position = Integer.parseInt(no.getText().toString()) - 1;
-//          String memo = list.get(position);
-//          Intent intent = new Intent(v.getContext(), DetailActivity.class);
-//          intent.putExtra(DetailActivity.MEMO_KEY, memo.toString());
-//          v.getContext().startActivity(intent);
-//        }
-//      });
     }
   }
 
