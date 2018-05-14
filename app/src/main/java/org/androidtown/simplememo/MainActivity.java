@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
   public static final String LOG_TAG = "SimpleMemo";
   RecyclerView recycler;
   CustomAdapter adapter;
+  public static final int REQUEST_CODE = 55;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -24,16 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     recycler = findViewById(R.id.recyclerView);
     List<String> list = Preference.getList(this);
-    adapter = new CustomAdapter();
+    adapter = new CustomAdapter(this);
     recycler.setAdapter(adapter);
     recycler.setLayoutManager(new LinearLayoutManager(this));
-    adapter.setDataAndRefresh(list);
-  }
-
-  @Override
-  protected void onResume() {
-    super.onResume();
-    List<String> list = Preference.getList(this);
     adapter.setDataAndRefresh(list);
   }
 
@@ -43,9 +37,17 @@ public class MainActivity extends AppCompatActivity {
     Intent intent = new Intent(getBaseContext(), DetailActivity.class);
 
     // 2. 시스템에 인텐트 전달
-    startActivity(intent);
+    startActivityForResult(intent, REQUEST_CODE);
+  }
 
-    // 3.
-
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//    super.onActivityResult(requestCode, resultCode, data);
+    if(requestCode == REQUEST_CODE) {
+      if(resultCode == RESULT_OK) {
+        List<String> list = Preference.getList(this);
+        adapter.setDataAndRefresh(list);
+      }
+    }
   }
 }

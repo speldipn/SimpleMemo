@@ -3,4 +3,6 @@
     <dimen name="list_item_height">60dp</dimen>
     <dimen name="list_item_no_width">20dp</dimen>
     <dimen name="list_item_date_width">120dp</dimen>
+    <dimen name="list_item_delete_width">40dp</dimen>
+    <dimen name="list_item_modify_width">50dp</dimen>
 </resources>
