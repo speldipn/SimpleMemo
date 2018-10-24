@@ -4,6 +4,8 @@ first commit
 #### SharedPreferences와 RecyclerView를 사용하여 간단한 메모앱 만들기 
 
 ### 동작시현
+![](/screenshot/simplememo.gif)
+<br>
 ![screenshot01](/screenshot/screenshot01.png)
 
 ### SharedPreferences 사용
